@@ -34,7 +34,8 @@ export const arrangeFamiliesFunc = (store: Store) => (
       }
       else {
         if (family.parents.length === 2 && unitNodesCount(family.parents) > 2)
-          unit.pos = Math.floor(family.parents[1]!.pos / 2);
+          // Adding two to try and resolve arrangement problem
+          unit.pos = Math.floor(family.parents[1]!.pos / 2)+2;
         arrangeNextFamily(family, nextFamily);
       }
 
